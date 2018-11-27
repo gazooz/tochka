@@ -1,0 +1,80 @@
+body {
+	background: #f7f3f3;
+} 
+input {
+	padding: 5px 15px;
+}
+.tasks {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 80%;
+	margin: auto;
+}
+.tasks__search {
+	padding: 15px;
+}
+.tasks__list {
+	width: 100%;
+}
+.tasks__list-table {
+	border-collapse: collapse;
+	width: 100%;
+}
+.tasks__list-table td{
+	border: 1px solid #ddd;
+	padding: 5px 15px;
+}
+.tasks__list-table thead td {
+	font-weight: bold;
+	text-align: center;
+}
+.tasks__list-table tr {
+	cursor: pointer;
+}
+.tasks__list-table tr:hover td{
+	background: #f0f0f0;
+}
+.task {
+	min-width: 60%;
+}
+.task__row {
+	display: flex;
+	justify-content: flex-start;
+	width: 100%;
+	margin-bottom: 15px;
+}
+.task__row-name {
+	display: flex;
+	width: 40%;
+	padding: 5px 15px;
+}
+.task__row-value {
+	display: flex;
+	width: 60%;
+	padding: 5px 15px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+.modal__header {
+	text-align: center;
+}
+.pagination {
+    display: flex;
+}
+.pagination > li {
+	list-style: none;
+	display: inline-block;
+}
+.pagination a, .pagination span {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+.pagination a.active, .pagination span {
+    background-color: #468ee5;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}

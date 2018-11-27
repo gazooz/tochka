@@ -1,0 +1,9 @@
+{
+    "autoload": {
+        "psr-4": {"Tochka\\": "src/"}
+    },
+    "require": {
+        "slim/slim": "^3.0",
+        "slim/php-view": "^2.2"
+    }
+}

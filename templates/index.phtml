@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Tochka Tasks</title>
+   
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link href="fancybox/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="tasks">
+      <div class="tasks__search">
+        <form class="tasks__search-form">
+          <input type="text" name="search" placeholder="Поиск" <?= $search ? "value='{$search}'" : "";?>>
+        </form>
+      </div>
+      <div class="tasks__list">
+        <table class="tasks__list-table">
+          <thead>
+            <tr>
+              <td>Номер задачи</td>
+              <td>Заголовок</td>
+              <td>Дата выполнения</td>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach($tasks as $task) { ?>
+            <tr data-task="<?php echo $task['id']; ?>">
+              <td><?php echo $task['id']; ?></td>
+              <td><?php echo $task['title']; ?></td>
+              <td><?php echo $task['date']; ?></td>
+            </tr>
+            <?php } ?>
+          </tbody>
+        </table>
+      </div>
+      <div class="tasks__pagination">
+        <?= $pagination; ?>
+      </div>
+    </div>
+    <div class="task" hidden>
+      <div class="task__modal modal">
+        <div class="modal__header">
+          <h2 class="modal__heading">Информация о задаче №<span data-key="id"></span></h2>
+        </div>
+        <div class="modal__body task__info">
+          <div class="task__row">
+            <span class="task__row-name">Заголовок</span>
+            <span class="task__row-value" data-key="title"></span>
+          </div>
+          <div class="task__row">
+            <span class="task__row-name">Дата выполнения</span>
+            <span class="task__row-value" data-key="date"></span>
+          </div>
+          <div class="task__row">
+            <span class="task__row-name">Автор</span>
+            <span class="task__row-value" data-key="author"></span>
+          </div>
+          <div class="task__row">
+            <span class="task__row-name">Статус</span>
+            <span class="task__row-value" data-key="status"></span>
+          </div>
+          <div class="task__row">
+            <span class="task__row-name">Описание</span>
+            <span class="task__row-value" data-key="description"></span>
+          </div>
+        </div>
+      </div>
+    </div>    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="fancybox/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+  </body>
+</html>
