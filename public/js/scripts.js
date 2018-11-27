@@ -1,3 +1,9 @@
+$(document).ready(function(){
+    if(getTasksList() == null) {
+        setTasksList({});
+    }
+});
+
 $(document).on('click', '.tasks__list tr', function() {
     var task_id = $(this).data('task');
     showTask(task_id);
@@ -6,7 +12,7 @@ $(document).on('click', '.tasks__list tr', function() {
 function showTask(task_id) {
     var url = '/api/v1/task/' + task_id;
     var tasks = getTasksList();
-    if(tasks[task_id] == undefined) {
+    if(tasks == null || tasks[task_id] == undefined) {
         $.ajax({
             url: url,
             dataType: 'json'
